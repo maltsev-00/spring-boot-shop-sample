@@ -30,9 +30,9 @@ public class StartupData implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        adminAccount();
-        userAccount();
-        category();
+//        adminAccount();
+//        userAccount();
+//        category();
         exampleProducts();
     }
 
@@ -82,6 +82,8 @@ public class StartupData implements CommandLineRunner {
         Product product2 = new Product();
         Product product3 = new Product();
         Product product4 = new Product();
+        System.out.println(categoryRepository.findByCategoryName("Adventure").getId());
+
 
         product1.setName(NAME);
         product1.setImageUrl(IMAGE_URL);
@@ -92,7 +94,7 @@ public class StartupData implements CommandLineRunner {
         product2.setName(NAME);
         product2.setImageUrl(IMAGE_URL);
         product2.setDescription(DESCRIPTION);
-        product2.setCategory(categoryRepository.findByCategoryName("Adventure"));
+        product2.setCategory(categoryRepository.findByCategoryName("Novel"));
         product2.setPrice(PRICE);
 
         product3.setName(NAME);
